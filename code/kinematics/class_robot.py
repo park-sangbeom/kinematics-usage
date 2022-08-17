@@ -1,5 +1,4 @@
 import numpy as np 
-import rospy 
 from kinematics.utils.util_ik import make_ik_input
 from kinematics.class_structure import CHAIN
 

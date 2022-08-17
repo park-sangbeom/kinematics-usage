@@ -11,17 +11,18 @@ def main_one_step(json_name):
     file_name = "../code/urdf/ur5e/ur5e_onrobot.urdf"
     base_offset = [0.18,0,0.79]
     robot     = RobotClass(file_name=file_name, base_offset=base_offset)    
+    robot.chain.joint[2].q =1
     x         = 1.0
     q_start   = robot.solve_ik(target_name = ['wrist_3_joint'],
-                target_position  = [[0.6,0,1.2]],
+                target_position  = [[0.7,0,1.2]],
                 target_rotation  = [[-math.pi/2, 0, math.pi/2]],
                 solve_position   = [1],
                 solve_rotation   = [10],
                 weight_position  = 1,
                 weight_rotation  = 1,
                 joi_ctrl_num= 6)
-
     for traj_idx in range(1000):
+        print(traj_idx)
         y         = np.random.uniform(-0.3,0.3)
         q_last    = robot.solve_ik(target_name = ['wrist_3_joint'],
                     target_position  = [[x,y,1.2]],
@@ -31,7 +32,7 @@ def main_one_step(json_name):
                     weight_position  = 1,
                     weight_rotation  = 1,
                     joi_ctrl_num= 6)
-        q_trajs = np.linsapce(q_start, q_last, 20)
+        q_trajs = np.linspace(q_start, q_last, 20)
         for step, q in enumerate(q_trajs): 
             result = {"num_traj":traj_idx+1,
                         "num_step":step+1,
