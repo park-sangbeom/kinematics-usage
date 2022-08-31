@@ -1,4 +1,3 @@
-from tkinter import YES
 import numpy as np 
 import math 
 import json 
