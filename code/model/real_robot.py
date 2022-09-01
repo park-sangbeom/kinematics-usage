@@ -17,7 +17,7 @@ import time
 
 class RealURClass:
     def __init__(self, file_name= "../urdf/ur5e/ur5e_onrobot.urdf",
-                       base_offset=[1.8, 0, 0.79]):
+                       base_offset=[0.18, 0, 0.79]):
         rospy.init_node("REAL_WORLD")
         self.client      = None
         self.JOINT_NAMES = ['shoulder_pan_joint', 'shoulder_lift_joint', 'elbow_joint',
@@ -29,16 +29,19 @@ class RealURClass:
         self.kin_robot   = RobotClass(file_name=self.file_name, 
                                       base_offset=self.base_offset)
 
-    def get_joint_value(self, target_position=[0.6,0,1.2], 
-                                traget_rotation=[0,0,0]):
+    def get_joint_value(self, target_position=[[0.6,0,1.2]], 
+                              traget_rotation=[[0,0,0]]):
         q         = self.kin_robot.solve_ik(target_name = ['wrist_3_joint'],
-                    target_position  = [target_position],
-                    target_rotation  = [traget_rotation],
+                    target_position  = target_position,
+                    target_rotation  = traget_rotation,
                     solve_position   = [1],
                     solve_rotation   = [1],
                     weight_position  = 1,
                     weight_rotation  = 1,
                     joi_ctrl_num= 6)
+        for idx in range(7):
+            print(self.kin_robot.chain.joint[idx].name)
+            print(self.kin_robot.chain.joint[idx].p)
         print("Control joint value: {} \nShape: {}".format(q, q.shape))
         return q
 
@@ -63,7 +66,7 @@ class RealURClass:
 
     def init_pose(self):
         try: 
-            q = [0.9, -0.6596, 1.3364, 0.0350, 0, 0]
+            q = [-0.2, -0.8596, 1.3364, 0.0350, 0, 0]
             g = FollowJointTrajectoryGoal()
             g.trajectory = JointTrajectory()
             g.trajectory.joint_names = self.JOINT_NAMES
@@ -129,12 +132,11 @@ class RealURClass:
             self.client = actionlib.SimpleActionClient('follow_joint_trajectory', FollowJointTrajectoryAction)
             print("Waiting for server...")
             self.client.wait_for_server()
-            print("Connected to server")
-            """ Initialize """
-            self.init_pose()     
+            print("Connected to server")  
             """ Solve IK """
             q = self.get_joint_value(target_position=target_position, traget_rotation=target_rotation)
-            self.move_single_q(q)
+            ctrl_q = q[1:]
+            self.move_single_q(ctrl_q)
             time.sleep(1)
         except KeyboardInterrupt:
             rospy.signal_shutdown("KeyboardInterrupt")
@@ -151,3 +153,23 @@ class RealURClass:
         except KeyboardInterrupt:
             rospy.signal_shutdown("KeyboardInterrupt")
             raise
+    
+    def real_move_put_joint(self, q=[0, -0.32472401, -1.55509868,  1.49881365,  0.05628501, -0.32472399, 3.14159078]):
+        try:
+            self.client = actionlib.SimpleActionClient('follow_joint_trajectory', FollowJointTrajectoryAction)
+            print("Waiting for server...")
+            self.client.wait_for_server()
+            print("Connected to server")  
+            for idx in range(7):
+                self.kin_robot.chain.joint[idx].q = q[idx]
+            self.kin_robot.chain.fk_chain(1)
+            ctrl_q = q[1:]
+            self.move_single_q(ctrl_q)
+            for idx in range(7):
+                print("Joint name: ",self.kin_robot.chain.joint[idx].name)
+                print("Joint position: ",self.kin_robot.chain.joint[idx].p.T)
+                print("Joint value:", self.kin_robot.chain.joint[idx].q)
+            time.sleep(1)
+        except KeyboardInterrupt:
+            rospy.signal_shutdown("KeyboardInterrupt")
+            raise        
