@@ -1,8 +1,0 @@
-%time,field.header.seq,field.header.stamp,field.header.frame_id,field.height,field.width,field.fields0.name,field.fields0.offset,field.fields0.datatype,field.fields0.count,field.fields1.name,field.fields1.offset,field.fields1.datatype,field.fields1.count,field.fields2.name,field.fields2.offset,field.fields2.datatype,field.fields2.count,field.fields3.name,field.fields3.offset,field.fields3.datatype,field.fields3.count,field.is_bigendian,field.point_step,field.row_step,field.is_dense
-1661952977148016712,797,1661952976804970741,camera_depth_optical_frame,1,23331,x,0,7,1,y,4,7,1,z,8,7,1,rgb,16,7,1,0,20,466620,1
-1661952977155003192,798,1661952976838708639,camera_depth_optical_frame,1,73944,x,0,7,1,y,4,7,1,z,8,7,1,rgb,16,7,1,0,20,1478880,1
-1661952978489025763,799,1661952978448670864,camera_depth_optical_frame,1,96920,x,0,7,1,y,4,7,1,z,8,7,1,rgb,16,7,1,0,20,1938400,1
-1661952980867469727,800,1661952980499282598,camera_depth_optical_frame,1,18388,x,0,7,1,y,4,7,1,z,8,7,1,rgb,16,7,1,0,20,367760,1
-1661952980877505985,801,1661952980532772541,camera_depth_optical_frame,1,74620,x,0,7,1,y,4,7,1,z,8,7,1,rgb,16,7,1,0,20,1492400,1
-1661952982813250987,802,1661952982478063345,camera_depth_optical_frame,1,24781,x,0,7,1,y,4,7,1,z,8,7,1,rgb,16,7,1,0,20,495620,1
-1661952982824359670,803,1661952982511374474,camera_depth_optical_frame,1,72632,x,0,7,1,y,4,7,1,z,8,7,1,rgb,16,7,1,0,20,1452640,1
