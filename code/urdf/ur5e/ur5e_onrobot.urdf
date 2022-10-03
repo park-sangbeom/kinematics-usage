@@ -207,24 +207,49 @@
       <inertia ixx="9.89041005217e-05" ixy="0.0" ixz="0.0" iyy="9.89041005217e-05" iyz="0.0" izz="0.0001321171875"/>
     </inertial>
   </link>
-  <joint name="ee_fixed_joint" type="fixed">
+  <joint name="mount_joint" type="fixed">
     <parent link="wrist_3_link"/>
-    <child link="tool0"/>
-    <origin rpy="0 0 0" xyz="0.0 0.1 0.0"/>   <!-- <before rpy="-1.57 0 0" xyz="0.0 0.1 0.0"/> -->
+    <child link="mount_link"/>
+    <origin rpy="0 3.141592 3.141592" xyz="0.0 0.045 0.0"/>   <!-- <before rpy="-1.57 0 0" xyz="0.0 0.1 0.0"/> -->
     <axis xyz="0 1 0"/>
   </joint>
-  <link name="tool0">
+  <link name="mount_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://ir_gazebo/urdf/ur5e/meshes/collision/mount.stl" scale="0.0001 0.0001 0.0001"/>
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
     <collision>
       <geometry>
-        <box size="0.01 0.01 0.01"/>
+        <mesh filename="package://ir_gazebo/urdf/ur5e/meshes/collision/mount.stl" scale="0.0001 0.0001 0.0001"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="-0.01 0 0"/>
     </collision>
+    <inertial>
+      <mass value="0.1879"/>
+      <origin rpy="0 0 0" xyz="0.0 0.01 0.0"/>
+      <inertia ixx="9.89041005217e-05" ixy="0.0" ixz="0.0" iyy="9.89041005217e-05" iyz="0.0" izz="0.0001321171875"/>
+    </inertial>
+  </link>
+  <joint name="mount_camera_joint" type="fixed">
+    <parent link="mount_link"/>
+    <child link="camera_base_link"/>
+    <origin rpy="0 0 0" xyz="0 0. 0.093"/>  
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="camera_base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.199035856566616"/>
+      <inertia ixx="0." ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
   </link>
   <joint name="gripper_base_joint" type="fixed">
-    <parent link="tool0"/>
+    <parent link="wrist_3_link"/>
     <child link="gripper_base_link"/>
-    <origin rpy="-1.57 0 0" xyz="0 0. 0."/>   <!--<origin rpy="0 0 0" xyz="0 0 0"/> -->
+    <origin rpy="-1.57 0 0" xyz="0 0.1 0."/>   <!--<origin rpy="0 0 0" xyz="0 0 0"/> -->
     <axis xyz="0 1 0"/>
   </joint>
   <link name="gripper_base_link">

@@ -97,13 +97,17 @@ link14 = {"name":"link14", "size": [0., 0., 0.], "height":0.0430, "radius":0.012
 
 link15 = {"name":"link15", "size": [0., 0., 0.], "height":0.0, "radius":0.0,
             "T_offset":np.eye(4)}
+
+link16_camera = {"name":"link16", "size": [0., 0., 0.], "height":0.0, "radius":0.0, #"height":0.125297, "radius":0.125333,#
+            "T_offset":np.eye(4)}
+
 joint_limits_low  = np.array([0, -2.8973, -3.0, -2.618, -3.1415, -3.1415, -3.1415])
 joint_limits_high = np.array([0, 2.8973, 0.31, 2.6, 2.6, 3.1415, 3.1415])
 start_joints      = np.array([0, -0.3004884065435629,-1.89270333133803,1.9277298476124773,-1.6044670780114405,-1.5697175550123657,2.8396582340451655])
 ctrl_joint_num    = 7 # 6DoF + Base_joint
 
 CONFIG = {"capsule": [link0, link1, link2, link3, link4, link5, 
-                      link6, link7, link8, link9, link10, link11,
+                      link6, link7, link16_camera, link8, link9, link10, link11,
                       link12, link13, link14, link15], 
         "joint_limits_low": joint_limits_low, 
         "joint_limits_high": joint_limits_high, 

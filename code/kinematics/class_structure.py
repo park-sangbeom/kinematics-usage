@@ -184,8 +184,7 @@ class CHAIN:
                                                        self.base_offset[2]), # Attached position offset from the world 
                                             R=np.eye(3), 
                                             R_offset=make_rotation(rad=joint['rpy']),
-                                            type=joint['type']))          
-            
+                                            type=joint['type']))     
             else: 
                 self.joint.append(JOINT(name=joint['name'], 
                                             id=joint['id'], 
