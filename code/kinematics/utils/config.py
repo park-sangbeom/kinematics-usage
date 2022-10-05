@@ -41,7 +41,7 @@ link6 = {"name":"link6", "size": [0.179926, 0.132863, 0.100243], "height":0.0026
                                 [0, 0, 0, 1]])}
 #wrist-3-link
 
-link7 = {"name":"link7", "size": [0., 0., 0.], "height":0.0, "radius":0.0, #"height":0.125297, "radius":0.125333,#
+link7 = {"name":"link7", "size": [0., 0., 0.], "height":0.0001, "radius":0.0001, #"height":0.125297, "radius":0.125333,#
             "T_offset":np.eye(4)}
 #tool0 link
 
@@ -98,7 +98,7 @@ link14 = {"name":"link14", "size": [0., 0., 0.], "height":0.0430, "radius":0.012
 link15 = {"name":"link15", "size": [0., 0., 0.], "height":0.0, "radius":0.0,
             "T_offset":np.eye(4)}
 
-link16_camera = {"name":"link16", "size": [0., 0., 0.], "height":0.0, "radius":0.0, #"height":0.125297, "radius":0.125333,#
+link16_camera = {"name":"link16", "size": [0., 0., 0.], "height":0.0001, "radius":0.0001, #"height":0.125297, "radius":0.125333,#
             "T_offset":np.eye(4)}
 
 joint_limits_low  = np.array([0, -2.8973, -3.0, -2.618, -3.1415, -3.1415, -3.1415])

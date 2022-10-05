@@ -165,6 +165,7 @@ def get_desired_time(start_pos, target_pos, desired_vel):
     desired_time = length/desired_vel
     return desired_time
 
+# Visualization function 
 def get_viz_ingredients(p_list, rpy_list, mesh_path_list, scale_lst, color_lst):
     viz_links = []
     for p, rpy, mesh_path, scale, color in zip(p_list, rpy_list, mesh_path_list, scale_lst, color_lst):
@@ -182,3 +183,54 @@ def get_viz_cylinder_ingredients(p_list, rpy_list, radius_list, height_list):
     for p, rpy, radius, height in zip(p_list, rpy_list, radius_list, height_list):
         viz_links.append([p[0], p[1], p[2], rpy[0], rpy[1], rpy[2], radius, radius, height])
     return viz_links 
+
+# Collision checker function 
+
+def get_cap_size_chain(robot_lc):
+    size_lst = []
+    n_link = len(robot_lc)
+    for idx in range(n_link):  
+        size_lst.append(robot_lc[idx].cap.size)
+    return size_lst
+
+def get_cap_radius(robot_lc):
+    n_link = len(robot_lc)
+    cap_radius = []
+    for idx in range(n_link):
+        cap_radius.append(robot_lc[idx].cap.radius)
+    return cap_radius
+
+def get_cap_R_chain(robot_lc):
+    n_joint = len(robot_lc) 
+    R_list = [] 
+    for idx in range(n_joint):
+        R_list.append(robot_lc[idx].cap.R)
+    return R_list
+
+def get_cap_p_chain(robot_lc):
+    n_joint = len(robot_lc)
+    p_list = np.zeros((n_joint,3))
+    for idx in range(n_joint):
+        p_list[idx] = robot_lc[idx].cap.p.T
+    return p_list  
+
+def get_cap_R_chain(robot_lc):
+    n_link = len(robot_lc)
+    cap_R_list = []
+    for idx in range(n_link):
+        cap_R_list.append(robot_lc[idx].cap.R) 
+    return cap_R_list 
+
+def get_cap_coll_ingredients(link_p_list, rpy_list, height_list, radius_list):
+    coll_links = []
+    for link_p, rpy, height, radius in zip(link_p_list, rpy_list, height_list, radius_list):
+        coll_links.append([link_p[0], link_p[1], link_p[2], rpy[0], rpy[1], rpy[2], height, radius])
+    return coll_links
+
+def get_cc_ingredients(name_list, link_p_list, rpy_list, height_list, radius_list):
+    fcl_ingredients=[{"name":name, "type":"capsule", "position":[link_p[0], link_p[1], link_p[2]], 
+                "orientation":[rpy[0], rpy[1], rpy[2]], 
+                "size":[height, radius]}
+                for name, link_p, rpy, height, radius 
+                in zip(name_list, link_p_list, rpy_list, height_list, radius_list)]
+    return fcl_ingredients  

@@ -32,7 +32,7 @@ def publish_viz_robot(boxes):
                 marker.color.r = box[10]
                 marker.color.g = box[11]
                 marker.color.b = box[12]
-                marker.color.a = box[13]
+                marker.color.a = 0.2#box[13]
                 marker.mesh_resource = str(box[6])
 
                 markers.append(marker)
