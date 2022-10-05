@@ -236,7 +236,7 @@
   <joint name="mount_camera_joint" type="fixed">
     <parent link="mount_link"/>
     <child link="camera_base_link"/>
-    <origin rpy="0 0 0" xyz="0 0. 0.093"/>  
+    <origin rpy="0 0 0" xyz="0 -0.015 0.093"/>  
     <axis xyz="0 1 0"/>
   </joint>
   <link name="camera_base_link">

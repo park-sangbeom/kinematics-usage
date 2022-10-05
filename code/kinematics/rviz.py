@@ -45,5 +45,5 @@ class RvizClass:
         viz_obj = publish_viz_markers(obj)
         self.pub_obj.publish(viz_obj)
 
-def make_markers(name, type, pos, rot, size, color): 
-    return {"name":name, "type":type, "info":pos+rot+size, "color":color}
+    def make_markers(self, name, type, pos, rot, size, color): 
+        return {"name":name, "type":type, "info":pos+rot+size, "color":color}

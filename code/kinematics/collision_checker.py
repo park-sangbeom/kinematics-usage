@@ -5,11 +5,11 @@ from tf.transformations import quaternion_from_euler
 
 """ Flexible Collision Library """
 class PyFCL:
-    def __init__(self, _num_max_contacts = 100, _verbose = True):
+    def __init__(self, _num_max_contacts = 100, verbose = True):
         self.geom_lst = []
         self.objs_lst = []
         self.name_lst = [] 
-        self.verbose  = _verbose
+        self.verbose  = verbose
         self.req      = fcl.CollisionRequest()
         self.res      = fcl.CollisionResult()
         self.cdata    = fcl.CollisionData(request = self.req)
