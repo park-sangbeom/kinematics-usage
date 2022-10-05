@@ -144,7 +144,7 @@ def aug_jacobian(robot_jc, idx):
     return J  
 
 def damped_ls(J_use, ik_err):
-    lambda_rate = 0.01
+    lambda_rate = 0.001
     lambda_min = 1e-6
     lambda_max = 1e-0
     step_size = 0.1
