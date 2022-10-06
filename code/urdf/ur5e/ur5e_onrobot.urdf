@@ -210,7 +210,7 @@
   <joint name="mount_joint" type="fixed">
     <parent link="wrist_3_link"/>
     <child link="mount_link"/>
-    <origin rpy="0 3.141592 3.141592" xyz="0.0 0.045 0.0"/>   <!-- <before rpy="-1.57 0 0" xyz="0.0 0.1 0.0"/> -->
+    <origin rpy="0 3.141592 3.141592" xyz="0.0 0.09 0.0"/>   <!-- <before rpy="-1.57 0 0" xyz="0.0 0.1 0.0"/> -->
     <axis xyz="0 1 0"/>
   </joint>
   <link name="mount_link">
