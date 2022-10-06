@@ -48,8 +48,11 @@ mount_link = {"name":"mount_link", "size": [0., 0., 0.], "height":0.0564, "radiu
                     [-0.0667 , -0.0441, -0.9968, 0.0282],
                     [0, 0, 0, 1]])}
 
-camera_base_link = {"name":"camera_base_link", "size": [0.09, 0.02, 0.02], "height":0.02, "radius":0.045,
-                    "T_offset":np.eye(4)}
+camera_base_link = {"name":"camera_base_link", "size": [0.09, 0.02, 0.02], "height":0.056, "radius":0.025,
+                "T_offset":np.array([[-0.0024, -0.0064, 1, 2.251605357981266e-04],
+                    [-0.0064, 1, -0.0064, -0.0055],
+                    [-1 , -0.0064, -0.0024, 5.713196902388803e-05],
+                    [0, 0, 0, 1]])}
 
 gripper_base_link = {"name":"gripper_base_link", "size": [0., 0., 0.], "height":0.0784, "radius":0.0384,
             "T_offset":np.array([[0.999987485555153, 2.814043238879283e-05, 0.0050, 4.583645816269062e-05],
