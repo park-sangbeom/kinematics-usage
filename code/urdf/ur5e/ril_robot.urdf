@@ -20,7 +20,7 @@
   <link name="base_link">
     <visual>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/ur5e/meshes/visual/base.dae"/>
+        <mesh filename="package://ril_manipulator/urdf/ur5e/meshes/visual/base.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -28,7 +28,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/ur5e/meshes/collision/base.stl"/>
+        <mesh filename="package://ril_manipulator/urdf/ur5e/meshes/collision/base.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -48,7 +48,7 @@
   <link name="shoulder_link">
     <visual>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/ur5e/meshes/visual/shoulder.dae"/>
+        <mesh filename="package://ril_manipulator/urdf/ur5e/meshes/visual/shoulder.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -56,7 +56,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/ur5e/meshes/collision/shoulder.stl"/>
+        <mesh filename="package://ril_manipulator/urdf/ur5e/meshes/collision/shoulder.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -77,7 +77,7 @@
   <link name="upper_arm_link">
     <visual>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/ur5e/meshes/visual/upperarm.dae"/>
+        <mesh filename="package://ril_manipulator/urdf/ur5e/meshes/visual/upperarm.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -85,7 +85,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/ur5e/meshes/collision/upperarm.stl"/>
+        <mesh filename="package://ril_manipulator/urdf/ur5e/meshes/collision/upperarm.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -105,7 +105,7 @@
   <link name="forearm_link">
     <visual>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/ur5e/meshes/visual/forearm.dae"/>
+        <mesh filename="package://ril_manipulator/urdf/ur5e/meshes/visual/forearm.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -113,7 +113,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/ur5e/meshes/collision/forearm.stl"/>
+        <mesh filename="package://ril_manipulator/urdf/ur5e/meshes/collision/forearm.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -134,7 +134,7 @@
   <link name="wrist_1_link">
     <visual>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/ur5e/meshes/visual/wrist1.dae"/>
+        <mesh filename="package://ril_manipulator/urdf/ur5e/meshes/visual/wrist1.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -142,7 +142,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/ur5e/meshes/collision/wrist1.stl"/>
+        <mesh filename="package://ril_manipulator/urdf/ur5e/meshes/collision/wrist1.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -162,7 +162,7 @@
   <link name="wrist_2_link">
     <visual>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/ur5e/meshes/visual/wrist2.dae"/>
+        <mesh filename="package://ril_manipulator/urdf/ur5e/meshes/visual/wrist2.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -170,7 +170,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/ur5e/meshes/collision/wrist2.stl"/>
+        <mesh filename="package://ril_manipulator/urdf/ur5e/meshes/collision/wrist2.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -184,13 +184,13 @@
     <child link="wrist_3_link"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.1"/>
     <axis xyz="0 1 0"/>
-    <limit effort="28.0" lower="-3.14159265359" upper="3.14159265359" velocity="6.28"/>
+    <limit effort="28.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="6.28"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
   <link name="wrist_3_link">
     <visual>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/ur5e/meshes/visual/wrist3.dae"/>
+        <mesh filename="package://ril_manipulator/urdf/ur5e/meshes/visual/wrist3.dae"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -198,25 +198,27 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/ur5e/meshes/collision/wrist3.stl"/>
+        <mesh filename="package://ril_manipulator/urdf/ur5e/meshes/collision/wrist3.stl"/>
       </geometry>
     </collision>
     <inertial>
       <mass value="0.1879"/>
-      <origin rpy="1.57079632679 0 0" xyz="0.0 0.0771 0.0"/>
-      <inertia ixx="9.89041005217e-05" ixy="0.0" ixz="0.0" iyy="9.89041005217e-05" iyz="0.0" izz="0.0001321171875"/>
+      <origin rpy="1.5707963267948966 0 0" xyz="0.0 0.0771 0.0"/>
+      <inertia ixx="9.890410052167731e-05" ixy="0.0" ixz="0.0" iyy="9.890410052167731e-05" iyz="0.0" izz="0.0001321171875"/>
     </inertial>
   </link>
   <joint name="mount_joint" type="fixed">
     <parent link="wrist_3_link"/>
     <child link="mount_link"/>
-    <origin rpy="0 3.141592 3.141592" xyz="0.0 0.09 0.0"/>   <!-- <before rpy="-1.57 0 0" xyz="0.0 0.1 0.0"/> -->
+    <origin rpy="3.14 -1.57 0" xyz="0.0 0.09 0.0"/>
+      #0.09 
+    <!-- <before rpy="-1.57 0 0" xyz="0.0 0.1 0.0"/> -->
     <axis xyz="0 1 0"/>
   </joint>
   <link name="mount_link">
     <visual>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/ur5e/meshes/collision/mount.stl" scale="0.0001 0.0001 0.0001"/>
+        <mesh filename="package://ril_manipulator/urdf/ur5e/meshes/collision/mount.stl" scale="0.0001 0.0001 0.0001"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -224,7 +226,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/ur5e/meshes/collision/mount.stl" scale="0.0001 0.0001 0.0001"/>
+        <mesh filename="package://ril_manipulator/urdf/ur5e/meshes/collision/mount.stl" scale="0.0001 0.0001 0.0001"/>
       </geometry>
     </collision>
     <inertial>
@@ -234,10 +236,9 @@
     </inertial>
   </link>
   <joint name="mount_camera_joint" type="fixed">
+    <origin rpy="1.5707963267948966 0 0" xyz="0. -0.025 0.087"/>
     <parent link="mount_link"/>
     <child link="camera_base_link"/>
-    <origin rpy="0 0 0" xyz="0 -0.015 0.093"/>  
-    <axis xyz="0 1 0"/>
   </joint>
   <link name="camera_base_link">
     <inertial>
@@ -248,7 +249,8 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/realsense_d435/meshes/visual/d435.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ir_gazebo/urdf/realsense_d435/meshes/visual/d435.dae"/>
+        <!-- <mesh filename="package://ril_manipulator/urdf/realsense_d435/meshes/visual/d435.stl" scale="0.001 0.001 0.001"/> -->
       </geometry>
       <material name="White">
         <color rgba="1 1 1 1"/>
@@ -258,7 +260,7 @@
   <joint name="gripper_base_joint" type="fixed">
     <parent link="wrist_3_link"/>
     <child link="gripper_base_link"/>
-    <origin rpy="-1.57 0 0" xyz="0 0.1 0."/>   <!--<origin rpy="0 0 0" xyz="0 0 0"/> -->
+    <origin rpy="-1.57 -1.57  0" xyz="0 0.1 0."/>   <!--<origin rpy="0 0 0" xyz="0 0 0"/> -->
     <axis xyz="0 1 0"/>
   </joint>
   <link name="gripper_base_link">
@@ -270,7 +272,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/rg2/meshes/visual/gripper_base_link.dae"/>
+        <mesh filename="package://ril_manipulator/urdf/rg2/meshes/visual/gripper_base_link.dae"/>
       </geometry>
       <material name="White">
         <color rgba="1 1 1 1"/>
@@ -279,7 +281,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/rg2/meshes/collision/gripper_base_link.STL"/>
+        <mesh filename="package://ril_manipulator/urdf/rg2/meshes/collision/gripper_base_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -305,7 +307,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/rg2/meshes/visual/gripper_finger1_finger_link.dae"/>
+        <mesh filename="package://ril_manipulator/urdf/rg2/meshes/visual/gripper_finger1_finger_link.dae"/>
       </geometry>
       <material name="White">
         <color rgba="1 1 1 1"/>
@@ -314,7 +316,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/rg2/meshes/collision/gripper_finger1_finger_link.STL"/>
+        <mesh filename="package://ril_manipulator/urdf/rg2/meshes/collision/gripper_finger1_finger_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -334,7 +336,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/rg2/meshes/visual/gripper_finger1_inner_knuckle_link.dae"/>
+        <mesh filename="package://ril_manipulator/urdf/rg2/meshes/visual/gripper_finger1_inner_knuckle_link.dae"/>
       </geometry>
       <material name="White">
         <color rgba="1 1 1 1"/>
@@ -343,7 +345,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/rg2/meshes/collision/gripper_finger1_inner_knuckle_link.STL"/>
+        <mesh filename="package://ril_manipulator/urdf/rg2/meshes/collision/gripper_finger1_inner_knuckle_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -364,7 +366,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/rg2/meshes/visual/gripper_finger1_finger_tip_link.dae"/>
+        <mesh filename="package://ril_manipulator/urdf/rg2/meshes/visual/gripper_finger1_finger_tip_link.dae"/>
       </geometry>
       <material name="White">
         <color rgba="1 1 1 1"/>
@@ -373,7 +375,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/rg2/meshes/collision/gripper_finger1_finger_tip_link.STL"/>
+        <mesh filename="package://ril_manipulator/urdf/rg2/meshes/collision/gripper_finger1_finger_tip_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -394,7 +396,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/rg2/meshes/visual/gripper_finger2_finger_link.dae"/>
+        <mesh filename="package://ril_manipulator/urdf/rg2/meshes/visual/gripper_finger2_finger_link.dae"/>
       </geometry>
       <material name="White">
         <color rgba="1 1 1 1"/>
@@ -403,7 +405,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/rg2/meshes/collision/gripper_finger2_finger_link.STL"/>
+        <mesh filename="package://ril_manipulator/urdf/rg2/meshes/collision/gripper_finger2_finger_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -424,7 +426,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/rg2/meshes/visual/gripper_finger2_inner_knuckle_link.dae"/>
+        <mesh filename="package://ril_manipulator/urdf/rg2/meshes/visual/gripper_finger2_inner_knuckle_link.dae"/>
       </geometry>
       <material name="White">
         <color rgba="1 1 1 1"/>
@@ -433,7 +435,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/rg2/meshes/collision/gripper_finger2_inner_knuckle_link.STL"/>
+        <mesh filename="package://ril_manipulator/urdf/rg2/meshes/collision/gripper_finger2_inner_knuckle_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -454,7 +456,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/rg2/meshes/visual/gripper_finger2_finger_tip_link.dae"/>
+        <mesh filename="package://ril_manipulator/urdf/rg2/meshes/visual/gripper_finger2_finger_tip_link.dae"/>
       </geometry>
       <material name="White">
         <color rgba="1 1 1 1"/>
@@ -463,7 +465,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/rg2/meshes/collision/gripper_finger2_finger_tip_link.STL"/>
+        <mesh filename="package://ril_manipulator/urdf/rg2/meshes/collision/gripper_finger2_finger_tip_link.STL"/>
       </geometry>
     </collision>
   </link>
