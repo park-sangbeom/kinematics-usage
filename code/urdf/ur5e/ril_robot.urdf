@@ -211,7 +211,6 @@
     <parent link="wrist_3_link"/>
     <child link="mount_link"/>
     <origin rpy="3.14 0 0" xyz="0.0 0.09 0.0"/>
-      #0.09 
     <!-- <before rpy="-1.57 0 0" xyz="0.0 0.1 0.0"/> -->
     <axis xyz="0 1 0"/>
   </joint>
@@ -249,7 +248,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://ir_gazebo/urdf/realsense_d435/meshes/visual/d435.dae"/>
+        <mesh filename="package://ril_manipulator/urdf/realsense_d435/meshes/visual/d435.dae"/>
         <!-- <mesh filename="package://ril_manipulator/urdf/realsense_d435/meshes/visual/d435.stl" scale="0.001 0.001 0.001"/> -->
       </geometry>
       <material name="White">
