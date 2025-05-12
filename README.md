@@ -5,7 +5,7 @@ It supports URDF parsing, kinematic tree construction, chain-based forward/inver
 
 ## 📁 Demos
 
-You can explore the core functionalities through interactive Jupyter notebooks located in the `demo/` folder:
+You can explore the core functionalities through interactive Jupyter notebooks located in the `code/demo/` folder:
 
 - `01.demo_parser.ipynb` – URDF parsing and robot model loading  
 - `02.demo_chain.ipynb` – Building kinematic chains from the parsed model  
